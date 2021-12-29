@@ -4,6 +4,7 @@ const carrito = document.getElementById('carrito');
 const procesarCompraBtn = document.getElementById('procesar-compra');
 const cliente = document.getElementById('cliente');
 const correo = document.getElementById('correo');
+const clienteTel = document.getElementById('clienteTel')
 
 
 cargarEventos();
@@ -37,13 +38,15 @@ function procesarCompra() {
         }).then(function() {
             window.location = "index.html";
         })
-    } else if (cliente.value === '' || correo.value === '') {
+    } else if (cliente.value === '' || correo.value === '' || clienteTel.value === '') {
         Swal.fire({
             type: 'error',
             title: 'Oops...',
             text: 'Ingrese todos los campos requeridos',
             showConfirmButton: false,
             timer: 4000
+        }).then(function() {
+            window.location = "compra.html";
         })
     } else {
 
