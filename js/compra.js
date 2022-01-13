@@ -26,17 +26,17 @@ function cargarEventos() {
 
 }
 
-function procesarCompra() {
-    // e.preventDefault();
+function procesarCompra(e) {
+    e.preventDefault();
     if (compra.obtenerProductosLocalStorage().length === 0) {
         Swal.fire({
             type: 'error',
             title: 'Oops...',
             text: 'No hay productos, selecciona alguno',
             showConfirmButton: false,
-            timer: 4000
+            timer: 2000
         }).then(function() {
-            window.location = "index.html";
+            window.location = "./index.html";
         })
     } else if (cliente.value === '' || correo.value === '' || clienteTel.value === '') {
         Swal.fire({
@@ -44,9 +44,9 @@ function procesarCompra() {
             title: 'Oops...',
             text: 'Ingrese todos los campos requeridos',
             showConfirmButton: false,
-            timer: 4000
+            timer: 2000
         }).then(function() {
-            window.location = "compra.html";
+            window.location = "./compra.html";
         })
     } else {
 

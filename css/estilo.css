@@ -1,3 +1,9 @@
 #cargando {
     display: none;
 }
+
+@media (max-width: 576px) {
+    .table {
+        display: inline-grid;
+    }
+}
