@@ -27,7 +27,7 @@ function cargarEventos() {
 }
 
 function procesarCompra(e) {
-    e.preventDefault();
+
     if (compra.obtenerProductosLocalStorage().length === 0) {
         Swal.fire({
             type: 'error',
@@ -38,6 +38,7 @@ function procesarCompra(e) {
         }).then(function() {
             window.location = "./index.html";
         })
+        e.preventDefault();
     } else if (cliente.value === '' || correo.value === '' || clienteTel.value === '') {
         Swal.fire({
             type: 'error',
@@ -48,6 +49,7 @@ function procesarCompra(e) {
         }).then(function() {
             window.location = "./compra.html";
         })
+        e.preventDefault();
     } else {
 
         //aqui se coloca el user id generado en el emailJS
@@ -58,6 +60,7 @@ function procesarCompra(e) {
         var myform = $("form#procesar-pago");
 
         myform.submit((event) => {
+            console.log(event)
             event.preventDefault();
 
             // Change to your service ID, or keep using the default service
